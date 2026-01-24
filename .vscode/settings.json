@@ -1,3 +1,4 @@
 {
-    "dbt.perspectiveTheme": "Monokai"
+    "dbt.perspectiveTheme": "Pro Dark",
+    "dbt.enableNewLineagePanel": true
 }
