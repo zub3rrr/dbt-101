@@ -1,0 +1,23 @@
+version: 2
+
+models:
+    - name: bronze_sales
+      config:
+        materialized: view  #this will over-ride the table materialiazed of dbt_project.yml with view [config block > properties.yml > dbt_project.yml]
+        schema: bronze
+      columns:
+        - name: sales_id
+          data_tests:
+            - unique
+            - not_null
+        - name: payment_method
+          data_tests:
+            - accepted_values:
+                arguments:
+                    values: ['Card','Cash','Gift Card','Digital Wallet']
+    - name: bronze_customer
+      columns:
+        - name: customer_sk
+          data_tests:
+            - unique
+            - not_null
