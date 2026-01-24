@@ -10,6 +10,9 @@ models:
           data_tests:
             - unique
             - not_null
+        - name: gross_amount
+          data_tests:
+            - non_negative
         - name: payment_method
           data_tests:
             - accepted_values:
