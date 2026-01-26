@@ -1,2 +1,3 @@
 SELECT 
-    {{ multiply(2,5) }} as result
+    {{ multiply('quantity','unit_price') }} as result
+FROM {{ ref("bronze_sales") }}
